@@ -17,8 +17,8 @@ class BiographyModelSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class BookModelSerializer(HyperlinkedModelSerializer):
-    authors = serializers.StringRelatedField(many=True)
+class BookModelSerializer(ModelSerializer):
+    # authors = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Book
@@ -26,7 +26,7 @@ class BookModelSerializer(HyperlinkedModelSerializer):
 
 
 class ArticleModelSerializer(ModelSerializer):
-    author = AuthorModelSerializer()
+    # author = AuthorModelSerializer()
 
     class Meta:
         model = Article
