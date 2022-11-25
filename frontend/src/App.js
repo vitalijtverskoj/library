@@ -20,6 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // this.load_data()
 
     axios.get('http://127.0.0.1:8001/api/authors/').then(response => {
 
@@ -43,15 +44,17 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className={'App'}>
         <BrowserRouter>
           <nav>
-            <li>
-              <Link to={'/'}>Authors</Link>
-            </li>
-            <li>
-              <Link to={'/books'}>Books</Link>
-            </li>
+            <ul>
+              <li>
+                <Link to={'/'}>Authors</Link>
+              </li>
+              <li>
+                <Link to={'/books'}>Books</Link>
+              </li>
+            </ul>
           </nav>
           <Routes>
             <Route exact path={'/'} element={<Navigate to={'/authors'}/>}/>
